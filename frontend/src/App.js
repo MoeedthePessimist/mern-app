@@ -1,10 +1,18 @@
-import './App.css';
+import React, { Fragment } from 'react';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import NewPlace from './places/pages/NewPlace';
+import Users from './users/pages/Users';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-     <h1>Hello world</h1>
-    </div>
+    <Router>
+      <Fragment>
+        <Routes>
+            <Route path="/" element={<Users />} exact />
+            <Route path="/places/new" element={<NewPlace />} exact />
+        </Routes>
+      </Fragment>
+    </Router>
   );
 }
 
